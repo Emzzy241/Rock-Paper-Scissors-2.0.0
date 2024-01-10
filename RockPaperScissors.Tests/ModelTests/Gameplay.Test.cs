@@ -6,8 +6,13 @@ using RockPaperScissors.Models;
 namespace RockPaperScissors.Tests
 {
     [TestClass]
-    public class RockPaperScissorsTests
+    public class RockPaperScissorsTests : IDisposable
     {
+        // The Dispose() method that we need to implement immediately we make use of our IDisposable interface
+        public void Dispose()
+        {
+            GamePlay.ClearAllGamePlays();
+        }
         // First Test: Test to create instance of my GamePlay constructor
         [TestMethod]
         public void RockPaperScissors_CreatesInstanceOfConstructor_RockPaperScissors()
@@ -264,11 +269,64 @@ namespace RockPaperScissors.Tests
             // Assert
             Assert.AreEqual(expectedWinner, returnedWinner);
         }
+        
 
+        // 16th Test: Test for List: Getting all Previous winners
+        [TestMethod]
+        public void GetAllGamePlays_ReturnsAListOfAllWinners_List()
+        {
+            // Arrange
+            string Player1Val = "rock";
+            string Player2Val = "ade";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
 
-        // 9th Test: Test if a list of previous winners is created.
-        // [TestMethod]
-        // public voif GetAllPreviousWinners_Returns
+            string Player1NewVal = "rock";
+            string Player2NewVal = "scissors";
+            GamePlay myGame2 = new GamePlay(Player1NewVal, Player2NewVal);
+            
+            string Player1NewVal2 = "paper";
+            string Player2NewVal2 = "rock";
+            GamePlay myGame3 = new GamePlay(Player1NewVal2, Player2NewVal2);
+            
+            List<GamePlay> recordList = new List<GamePlay>(){myGame, myGame2, myGame3};
+
+            // Act
+            List<GamePlay> myRecordList = GamePlay.GetAllGamePlays();
+
+            // Assert
+            CollectionAssert.AreEqual(recordList, myRecordList);
+
+        }
+
+         // 17th Test: Test to clear List: Clearing all Previous winners
+        [TestMethod]
+        public void ClearAllGamePlays_ReturnsAListOfAllWinners_List()
+        {
+            // Arrange
+            string Player1Val = "rock";
+            string Player2Val = "ade";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+
+            string Player1NewVal = "rock";
+            string Player2NewVal = "scissors";
+            GamePlay myGame2 = new GamePlay(Player1NewVal, Player2NewVal);
+            
+            string Player1NewVal2 = "paper";
+            string Player2NewVal2 = "rock";
+            GamePlay myGame3 = new GamePlay(Player1NewVal2, Player2NewVal2);
+            
+            List<GamePlay> recordList = new List<GamePlay>(){myGame, myGame2, myGame3};
+            List<GamePlay> expectedEmptyRecordList = new List<GamePlay>(){};
+
+            // Act
+           GamePlay.ClearAllGamePlays();
+
+            // Assert
+            // After clearing my list, I try to get it again and see that it truly returns an empty list after I did the clearing.
+            CollectionAssert.AreEqual(expectedEmptyRecordList, GamePlay.GetAllGamePlays());
+
+        }
+
 
     }
 }

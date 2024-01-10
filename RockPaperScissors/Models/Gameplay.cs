@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace RockPaperScissors.Models
 {
@@ -6,6 +7,8 @@ namespace RockPaperScissors.Models
     {
         public string Player1 { get; set; }
         public string Player2 { get; set; }
+
+        private static List<GamePlay> _gameRecord = new List<GamePlay>(){};
         
         
         
@@ -14,6 +17,7 @@ namespace RockPaperScissors.Models
             {   
                 Player1 = myPlayer1;
                 Player2 = myPlayer2;
+                _gameRecord.Add(this);
             }
 
             public string DetermineWinner(string newPlayer1, string newPlayer2)
@@ -67,6 +71,16 @@ namespace RockPaperScissors.Models
                 {
                     return "NO ONE WINS, YOUR GAME INPUT WAs WRONG, only enter rock, paper, or scissors to see winner";
                 }
+            }
+
+            public static List<GamePlay> GetAllGamePlays()
+            {
+                return _gameRecord;
+            }
+
+            public static void ClearAllGamePlays()
+            {
+                _gameRecord.Clear();
             }
     }    
 }
