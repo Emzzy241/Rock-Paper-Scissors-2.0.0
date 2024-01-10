@@ -77,22 +77,24 @@ namespace RockPaperScissors.Tests
             Assert.AreEqual(newPlayer2Val, myGame.Player2);
         }
 
-        // 6th Test: Test Method DetermineWinner();
-        // [TestMethod]
-        // public void DetermineWinner_ReturnsWinner_String()
-        // {
-        //     // Arrange
-        //     string Player1Val = "Rock";
-        //     string Player2Val = "Scissors";
-        //     GamePlay myGame = new GamePlay();
-        //     string expectedWinner = "Player 1";
+        // 6th Test: Test Method DetermineWinner(); works at all
+        [TestMethod]
+        public void DetermineWinner_ReturnsWinner_String()
+        {
+            // Arrange
+            string Player1Val = "Rock";
+            string Player2Val = "Scissors";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "Player 1";
 
-        //     // Act
-        //     string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
 
-        //     // Assert
-        //     Assert.AreEqual(expectedPlayer1Value, returnedWinner);
-        // }
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
+        
+
 
         // 9th Test: Test if a list of previous winners is created.
         // [TestMethod]
