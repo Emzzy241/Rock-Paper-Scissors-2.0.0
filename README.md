@@ -25,7 +25,7 @@ _Paper v. Scissors = Scissors wins_
 
 
 ## Detected Bugs/ Issues
-* No detected bugs_
+* No detected bugs
 
 ## license 
 Licensed under the GNU General Public License
