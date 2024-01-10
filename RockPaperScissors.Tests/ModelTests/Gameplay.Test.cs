@@ -236,7 +236,7 @@ namespace RockPaperScissors.Tests
         {
             // Arrange
             string Player1Val = "scissors";
-            string Player2Val = "rock";
+            string Player2Val = "scissors";
             GamePlay myGame = new GamePlay(Player1Val, Player2Val);
             string expectedWinner = "NO WINNER!, You both chosed scissors";
 

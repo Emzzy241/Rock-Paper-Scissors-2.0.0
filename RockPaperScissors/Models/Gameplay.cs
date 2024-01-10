@@ -58,6 +58,11 @@ namespace RockPaperScissors.Models
                     return "Player 2";
 
                 }
+                else if ((newPlayer1 == "scissors") && (newPlayer2 == "scissors"))
+                {
+                    return "NO WINNER!, You both chosed scissors";
+
+                }
                 else
                 {
                     return "NO ONE WINS";
