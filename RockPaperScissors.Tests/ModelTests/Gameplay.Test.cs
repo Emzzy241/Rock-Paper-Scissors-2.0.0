@@ -246,6 +246,24 @@ namespace RockPaperScissors.Tests
             // Assert
             Assert.AreEqual(expectedWinner, returnedWinner);
         }
+        
+         // 15th Test: Test Method DetermineWinner(); Tenth path: Player1-paper, Player2-scissors
+        // For Confirming user only enters: rock, paper, or scissors
+        [TestMethod]
+        public void DetermineWinner_TenthPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "bola";
+            string Player2Val = "ade";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "NO ONE WINS, YOUR GAME INPUT WAs WRONG, only enter rock, paper, or scissors to see winner";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
 
 
         // 9th Test: Test if a list of previous winners is created.
