@@ -30,8 +30,33 @@ namespace RockPaperScissors.Models
                 }
                 else if ((newPlayer1 == "rock") && (newPlayer2 == "rock"))
                 {
-                    return "NO WINNER!";
+                    return "NO WINNER!, You both chosed rock";
                     
+                }
+                else if ((newPlayer1 == "paper") && (newPlayer2 == "rock"))
+                {
+                    return "Player 1";
+                    
+                }
+                else if ((newPlayer1 == "paper") && (newPlayer2 == "scissors"))
+                {
+                    return "Player 2";
+
+                }
+                else if ((newPlayer1 == "paper") && (newPlayer2 == "paper"))
+                {
+                    return "NO WINNER, You both chosed paper";
+
+                }
+                else if ((newPlayer1 == "scissors") && (newPlayer2 == "paper"))
+                {
+                    return "Player 1";
+
+                }
+                else if ((newPlayer1 == "scissors") && (newPlayer2 == "rock"))
+                {
+                    return "Player 2";
+
                 }
                 else
                 {

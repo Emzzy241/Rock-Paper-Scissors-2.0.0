@@ -136,7 +136,7 @@ namespace RockPaperScissors.Tests
             string Player1Val = "rock";
             string Player2Val = "rock";
             GamePlay myGame = new GamePlay(Player1Val, Player2Val);
-            string expectedWinner = "NO WINNER!";
+            string expectedWinner = "NO WINNER!, You both chosed rock";
 
             // Act
             string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
@@ -150,10 +150,95 @@ namespace RockPaperScissors.Tests
         public void DetermineWinner_FourthPathOfMethod_String()
         {
             // Arrange
-            string Player1Val = "rock";
+            string Player1Val = "paper";
             string Player2Val = "rock";
             GamePlay myGame = new GamePlay(Player1Val, Player2Val);
-            string expectedWinner = "NO WINNER!";
+            string expectedWinner = "Player 1";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
+        
+         // 11th Test: Test Method DetermineWinner(); Fifth path: Player1-paper, Player2-scissors
+        [TestMethod]
+        public void DetermineWinner_FifthPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "paper";
+            string Player2Val = "scissors";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "Player 2";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
+        
+         // 12th Test: Test Method DetermineWinner(); Sixth path: Player1-paper, Player2-scissors
+        [TestMethod]
+        public void DetermineWinner_SixthPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "paper";
+            string Player2Val = "paper";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "NO WINNER, You both chosed paper";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
+        
+         // 13th Test: Test Method DetermineWinner(); Seventh path: Player1-paper, Player2-scissors
+        [TestMethod]
+        public void DetermineWinner_SeventhPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "scissors";
+            string Player2Val = "paper";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "Player 1";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
+        
+         // 13th Test: Test Method DetermineWinner(); Eight path: Player1-paper, Player2-scissors
+        [TestMethod]
+        public void DetermineWinner_EightPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "scissors";
+            string Player2Val = "rock";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "Player 2";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
+        
+         // 14th Test: Test Method DetermineWinner(); Ninth path: Player1-paper, Player2-scissors
+        [TestMethod]
+        public void DetermineWinner_NinthPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "scissors";
+            string Player2Val = "rock";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "NO WINNER!, You both chosed scissors";
 
             // Act
             string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
