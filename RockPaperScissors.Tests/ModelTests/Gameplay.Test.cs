@@ -82,8 +82,8 @@ namespace RockPaperScissors.Tests
         public void DetermineWinner_ReturnsWinner_String()
         {
             // Arrange
-            string Player1Val = "Rock";
-            string Player2Val = "Scissors";
+            string Player1Val = "rock";
+            string Player2Val = "scissors";
             GamePlay myGame = new GamePlay(Player1Val, Player2Val);
             string expectedWinner = "Player 1";
 
@@ -93,7 +93,74 @@ namespace RockPaperScissors.Tests
             // Assert
             Assert.AreEqual(expectedWinner, returnedWinner);
         }
+
+         // 7th Test: Test Method DetermineWinner(); first path Player1-rock, Player2-scissors
+        [TestMethod]
+        public void DetermineWinner_FirstPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "rock";
+            string Player2Val = "scissors";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "Player 1";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
+
+         // 8th Test: Test Method DetermineWinner(); second path:  Player1-rock, Player2-paper
+        [TestMethod]
+        public void DetermineWinner_SecondPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "rock";
+            string Player2Val = "paper";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "Player 2";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
+         
+         // 9th Test: Test Method DetermineWinner(); Third path: Player1-rock, Player2-rock
+        [TestMethod]
+        public void DetermineWinner_ThirdPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "rock";
+            string Player2Val = "rock";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "NO WINNER!";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
         
+         // 10th Test: Test Method DetermineWinner(); Fourth path: Player1-paper, Player2-rock
+        [TestMethod]
+        public void DetermineWinner_FourthPathOfMethod_String()
+        {
+            // Arrange
+            string Player1Val = "rock";
+            string Player2Val = "rock";
+            GamePlay myGame = new GamePlay(Player1Val, Player2Val);
+            string expectedWinner = "NO WINNER!";
+
+            // Act
+            string returnedWinner = myGame.DetermineWinner(Player1Val, Player2Val);
+
+            // Assert
+            Assert.AreEqual(expectedWinner, returnedWinner);
+        }
 
 
         // 9th Test: Test if a list of previous winners is created.

@@ -18,8 +18,25 @@ namespace RockPaperScissors.Models
 
             public string DetermineWinner(string newPlayer1, string newPlayer2)
             {
-                
-                return "Player 1";
+                if ((newPlayer1 == "rock") && (newPlayer2 == "scissors"))
+                {
+                    return "Player 1";
+                    
+                }
+                else if ((newPlayer1 == "rock") && (newPlayer2 == "paper"))
+                {
+                    return "Player 2";
+                    
+                }
+                else if ((newPlayer1 == "rock") && (newPlayer2 == "rock"))
+                {
+                    return "NO WINNER!";
+                    
+                }
+                else
+                {
+                    return "NO ONE WINS";
+                }
             }
     }    
 }
