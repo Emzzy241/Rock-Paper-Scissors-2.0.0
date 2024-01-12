@@ -69,7 +69,7 @@ namespace RockPaperScissors.Models
                 }
                 else
                 {
-                    return "NO ONE WINS, YOUR GAME INPUT WAs WRONG, only enter rock, paper, or scissors to see winner";
+                    return "NO ONE WINS, YOUR GAME INPUT WAS WRONG, only enter rock, paper, or scissors to see winner";
                 }
             }
 
