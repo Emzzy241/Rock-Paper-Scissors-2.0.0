@@ -14,18 +14,19 @@ namespace RockPaperScissors.Models
                 static void GameRules()
                 {
                     
-                    Console.WriteLine("           1. Enter 'Rock' to chose Rock");
-                    Console.WriteLine("           2. Enter 'Scissors' to chose Scissors");
-                    Console.WriteLine("           3. Enter 'Paper' to chose Paper");
+                    Console.WriteLine("           --> Enter 'Rock' to chose Rock");
+                    Console.WriteLine("           --> Enter 'Scissors' to chose Scissors");
+                    Console.WriteLine("           --> Enter 'Paper' to chose Paper");
 
                 }
 
-                
+
                 Console.WriteLine("---------------------------------------");
                 Console.WriteLine("Welcome to the Rock Paper Scissors Game");
                 Console.WriteLine("---------------------------------------");
 
                 Console.WriteLine();
+                Console.WriteLine("NOTE: The Game is on repeat mode, but to quit game; enter: Ctrl+C");
                 Console.WriteLine();
                 Console.WriteLine("Here are the rules for the game: ");
 
@@ -39,7 +40,7 @@ namespace RockPaperScissors.Models
                 switch (userOptionInt)
                 {
                     case 1:
-                        Console.WriteLine("Single Player Mode: You are now playing with a friend");
+                        Console.WriteLine("Single Player Mode: You are now playing with the computer");
 
                         // Generating Computers mode with the inbuilt C# random class
                     static string GetComputerVal()
@@ -60,7 +61,7 @@ namespace RockPaperScissors.Models
                             
                             else if(randNoInt == 3)
                             {
-                                return "rock";
+                                return "scissors";
                             }
 
                             else
@@ -73,9 +74,10 @@ namespace RockPaperScissors.Models
 
                     try
                     {
-                            Console.WriteLine("Select your own value");
+                            Console.WriteLine("Select your own value: You are Player 1");
+                            Console.WriteLine();
                             GameRules();
-                            string userVal = Console.ReadLine();
+                            string userVal = Console.ReadLine().ToLower();
                             Console.WriteLine();
 
                             // Getting computers value
@@ -87,7 +89,9 @@ namespace RockPaperScissors.Models
                             string soloPlayWinner = newGame.DetermineWinner(userVal, myCompVal);
 
                             Console.WriteLine($"And the winner is: {soloPlayWinner}");
-                        
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
                     }
                     catch
                     {
@@ -137,7 +141,13 @@ namespace RockPaperScissors.Models
 
                                 
                                 break;
+                            case "N":
+                                Console.WriteLine();
+                                Console.WriteLine("Goodbye My dear User");
+                                break;
                             default:
+                                Console.WriteLine("Something went wrong, ensure you enterred the right input. Try again");
+                                Main();
                                 break;
                         }
                         break;
